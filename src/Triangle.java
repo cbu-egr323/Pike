@@ -5,7 +5,6 @@ public class Triangle
     private boolean isEquilateral = false;
     private boolean isScalene = false;
     private boolean isIsosceles = false;
-    //private boolean invalidTri = false;
     private double s1;
     private double s2;
     private double s3;
@@ -18,7 +17,7 @@ public class Triangle
     }
     //******************************************************************
     public boolean isEquilateral() {
-        if (s1 == s2)  {
+        if (s1 == s2 && s2 == s3 && s1 == s3)  {
             isEquilateral = true;
             System.out.println("The triangle is EQUILATERAL!");
         }
@@ -26,7 +25,7 @@ public class Triangle
     }
     //******************************************************************
     public boolean isScalene() {
-        if ( (s1 != s2)  ) {
+        if ( (s1 != s2 && s2 != s3 && s1 != s3)  ) {
             isScalene = true;
             System.out.println("The triangle is SCALENE!");
         }
@@ -35,9 +34,9 @@ public class Triangle
     //******************************************************************
     public boolean isIsosceles() {
         if (
-                ( (s1 == s2) || (s1 != s3) ) ||
-                ( (s1 == s3) || (s1 != s2) ) ||
-                ( (s2 == s3) || (s2 != s1) ) ) {
+                ( (s1 == s2) && (s1 != s3) ) ||
+                ( (s1 == s3) && (s1 != s2) ) ||
+                ( (s2 == s3) && (s2 != s1) ) ) {
             isIsosceles = true;
             System.out.println("The triangle is ISOSCELES!");
         }
